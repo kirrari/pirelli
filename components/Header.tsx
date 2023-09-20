@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { AiOutlineMail, AiOutlineSearch } from 'react-icons/ai';
 
+export const TOP_HEADER_HEIGHT = 84;
 const TOP_OFFSET = 148;
 
 const Header: React.FC = () => {
@@ -25,8 +26,10 @@ const Header: React.FC = () => {
   });
 
   return (
-    <header className="w-full flex flex-col items-center">
-      <div className="w-4/5 h-[84px] flex items-center justify-between">
+    <header className="w-full flex flex-col items-center md:bg-black md:border-b-2 md:border-white">
+      <div
+        className={`w-4/5 h-[${TOP_HEADER_HEIGHT}px] flex items-center justify-between`}
+      >
         <Link href="/">
           <Image
             width={142}
@@ -49,7 +52,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div
-        className={`flex justify-center w-full h-[64px] z-50 bg-black text-[20px]
+        className={`hidden md:flex justify-center w-full h-[64px] z-50 bg-black text-[20px]
         ${showBackground ? 'fixed' : 'absolute top-[84px] bg-opacity-90'}`}
       >
         <div className="w-4/5 h-full flex justify-between items-center">
