@@ -69,12 +69,6 @@ const Header: React.FC = () => {
               className={`${showBackground ? 'block' : 'hidden'}`}
             />
             <Link
-              href="/stories"
-              className="text-white hover:text-light transition"
-            >
-              Stories
-            </Link>
-            <Link
               href="/products"
               className="text-white hover:text-light transition"
             >

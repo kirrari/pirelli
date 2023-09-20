@@ -1,13 +1,13 @@
 'use client';
 
 import Slider from '@/components/Slider';
-import Stories from '@/components/Stories';
+import Products from '@/components/Products';
 
 const PageContent = () => {
   return (
     <div>
       <Slider />
-      <Stories />
+      <Products />
     </div>
   );
 };
