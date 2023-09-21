@@ -1,10 +1,11 @@
+'use client';
+
 import { useCallback } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from 'react-icons/ai';
 
 import { slides } from '@/constants';
-import { TOP_HEADER_HEIGHT } from '@/components/Header';
 
 const Slider = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -26,21 +27,21 @@ const Slider = () => {
       className="overflow-hidden"
       ref={emblaRef}
     >
-      <div className="flex relative">
+      <div className={`flex relative h-[calc(100vh-84px)]`}>
         {slides.map((slide) => (
           <div
             key={slide.id}
-            className={`h-[calc(100vh-${TOP_HEADER_HEIGHT}px)] relative flex flex-none flex-nowrap w-full justify-center items-center`}
+            className="relative flex flex-none flex-nowrap w-full justify-between items-center"
           >
             <Image
               fill
               src={slide.imageUrl}
               alt={slide?.text ? slide.text : 'Slider Preview'}
-              className="object-cover"
+              className="object-cover bg-black bg-opacity-75"
             />
             <button
               onClick={scrollPrev}
-              className="hidden md:block z-10 p-4 mr-auto"
+              className="hidden md:block bg-black bg-opacity-75 h-full z-10 p-4"
             >
               <AiOutlineDoubleLeft
                 size={40}
@@ -48,7 +49,7 @@ const Slider = () => {
               />
             </button>
             {slide?.title || slide?.text ? (
-              <div className="bg-black bg-opacity-75 md:bg-opacity-0 z-10 max-w-6xl flex flex-col justify-center items-center p-4 h-full">
+              <div className="bg-black bg-opacity-75 z-10 flex flex-col justify-center items-center py-4 px-6 lg:px-12 h-full flex-1">
                 <div className="flex items-center mb-4">
                   <img
                     src="/resources/bracket-left.svg"
@@ -71,7 +72,7 @@ const Slider = () => {
             )}
             <button
               onClick={scrollNext}
-              className="hidden md:block z-10 p-4 ml-auto"
+              className="hidden md:block bg-black bg-opacity-75 h-full z-10 p-4"
             >
               <AiOutlineDoubleRight
                 size={40}

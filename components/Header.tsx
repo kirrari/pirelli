@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { AiOutlineMail, AiOutlineSearch } from 'react-icons/ai';
 
-export const TOP_HEADER_HEIGHT = 84;
 const TOP_OFFSET = 148;
 
 const Header: React.FC = () => {
@@ -26,10 +25,8 @@ const Header: React.FC = () => {
   });
 
   return (
-    <header className="w-full flex flex-col items-center md:bg-black md:border-b-2 md:border-white">
-      <div
-        className={`w-4/5 h-[${TOP_HEADER_HEIGHT}px] flex items-center justify-between`}
-      >
+    <header className="w-full flex flex-col items-center md:bg-black md:border-b-2 md:border-dark">
+      <div className={`w-4/5 h-[84px] flex items-center justify-between`}>
         <Link href="/">
           <Image
             width={142}
@@ -41,19 +38,19 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-4">
           <AiOutlineSearch
             size={37}
-            className="cursor-pointer text-white hover:text-light transition"
+            className="cursor-pointer hover:text-light transition"
           />
           <Link href="/mail">
             <AiOutlineMail
               size={37}
-              className="text-white hover:text-light transition"
+              className=" hover:text-light transition"
             />
           </Link>
         </div>
       </div>
       <div
         className={`hidden md:flex justify-center w-full h-[64px] z-50 bg-black text-[20px]
-        ${showBackground ? 'fixed' : 'absolute top-[84px] bg-opacity-90'}`}
+        ${showBackground ? 'fixed' : 'absolute top-[84px] bg-opacity-50'}`}
       >
         <div className="w-4/5 h-full flex justify-between items-center">
           <div
@@ -70,9 +67,9 @@ const Header: React.FC = () => {
             />
             <Link
               href="/products"
-              className="text-white hover:text-light transition"
+              className=" hover:text-light transition"
             >
-              Products
+              Tyres
             </Link>
           </div>
           <div
@@ -82,19 +79,19 @@ const Header: React.FC = () => {
           >
             <Link
               href="/about"
-              className="text-white hover:text-light transition"
+              className="hover:text-light transition"
             >
               About
             </Link>
             <Link
               href="/careers"
-              className="text-white hover:text-light transition"
+              className="hover:text-light transition"
             >
               Careers
             </Link>
             <AiOutlineSearch
               size={37}
-              className={`cursor-pointer text-white hover:text-light transition 
+              className={`cursor-pointer  hover:text-light transition 
               ${showBackground ? 'block' : 'hidden'}`}
             />
           </div>
